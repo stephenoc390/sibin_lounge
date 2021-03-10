@@ -12,6 +12,29 @@
     <title>Sibin Lounge</title>
 </head>
 <body>
+
+    <header>
+        <!-- top navbar -->
+        <nav class="nav-extended text-shadow  green lighten-1">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">The Síbín Lounge</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                    <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+                    <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- side navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+    </header>
     
     {% block content %}
     {% endblock %}
