@@ -27,6 +27,24 @@ def get_drinks():
 
 @app.route("/join", methods=["GET", "POST"])
 def join():
+    if request.method == "POST":
+        # checking if username is already existing in the db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Lounge name already exists")
+            return redirect(url_for("join"))
+
+        join = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(join)
+
+        # puts the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("You are now part of the Lounge!")
     return render_template("join.html")
 
 
