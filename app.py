@@ -114,8 +114,16 @@ def add_drink():
         mongo.db.drinks.insert_one(drink)
         flash("Drink has been added to the Lounge")
         return redirect(url_for("get_drinks"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_drink.html", categories=categories)
+
+
+@app.route("/edit_drink/<drink_id>", methods=["GET", "POST"])
+def edit_drink(drink_id):
+    drink = mongo.db.drinks.find_one({"_id": ObjectId(drink_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_drink.html", drink=drink, categories=categories)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="green-text text-darken-4 center-align">Edit Drink</h3>
+
+    <div class="row card-panel amber lighten-3">
+        <form class="col s12" method="POST" action="{{ url_for('edit_drink', drink_id=drink._id) }}">
+            <!-- drink name input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-cocktail prefix"></i>
+                    <input id="drink_name" name="drink_name" minlength="4" maxlength="15"
+                        type="text" class="validate" required>
+                    <label for="drink_name">Drink Name</label>
+                </div>
+            </div>
+            <!-- category selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-caret-square-down prefix"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose Style of Drink</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category_name" >Style</label>
+                </div>
+            </div>
+            <!-- drink ingredients input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-stream prefix"></i>
+                    <textarea id="drink_ingredients" name="drink_ingredients" minlength="5"
+                        maxlength="300" class="materialize-textarea validate" required></textarea>
+                    <label for="drink_ingredients">Ingredients</label>
+                </div>
+            </div>
+            <!-- drink method input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-ol prefix"></i>
+                    <textarea id="drink_method" name="drink_method" minlength="5"
+                        maxlength="300" class="materialize-textarea validate" required></textarea>
+                    <label for="drink_method">Method</label>
+                </div>
+            </div>
+            <!-- drink garnish input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-umbrella-beach prefix"></i>
+                    <textarea id="drink_garnish" name="drink_garnish" minlength="3"
+                        maxlength="100" class="materialize-textarea validate"></textarea>
+                    <label for="drink_garnish">Garnish</label>
+                </div>
+            </div>
+            <!-- social media input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-external-link-square-alt prefix"></i>
+                    <input id="social_media" name="social_media" minlength="5" maxlength="40"
+                        type="text" class="validate">
+                    <label for="social_media">Social Media Link</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Edit Drink <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
