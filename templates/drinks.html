@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
     {% for drink in drinks %}
         {{ drink.drink_name }}<br>
         {{ drink.category_name }}<br>
@@ -10,5 +9,12 @@
         {{ drink.drink_image }}<br>
         {{ drink.social_media }}<br>
     {% endfor %}
+
+<ul class="collapsible popout">
+    <li>
+        <div class="collapsible-header green-text"><i class="fas fa-cocktail"></i>First</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+</ul>
 
 {% endblock %}
