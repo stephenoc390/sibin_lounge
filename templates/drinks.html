@@ -7,8 +7,14 @@
         {% for drink in drinks %}
         <li>
             <div class="collapsible-header green-text">
-                <i class="fas fa-cocktail"></i>
-                <strong>{{ drink.drink_name }}</strong>
+                <div class="col s3">
+                    <i class="fas fa-cocktail"></i>
+                    <a href="" class="waves-effect waves-light btn-small"><i class="fas fa-times-circle left"></i>Remove</a>
+                    <a href="" class="waves-effect waves-light btn-small"><i class="fas fa-edit left" alt="edit"></i>Edit</a>
+                </div>
+                <div class="col s9">
+                    <strong>{{ drink.drink_name }}</strong>
+                </div>
             </div>
             <div class="collapsible-body">
                 <img src="{{ drink.drink_image }}" alt="">
