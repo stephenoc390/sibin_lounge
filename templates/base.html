@@ -23,7 +23,7 @@
                     <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
-                        <li><a href="#">New Drink</a></li>
+                        <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
                         <li><a href="#">Manage Categories</a></li>
                         <li><a href="{{ url_for('logout') }}">Leave Lounge</a></li>
                     {% else %}
@@ -39,7 +39,7 @@
             <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
-                <li><a href="#">New Drink</a></li>
+                <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
                 <li><a href="#">Manage Categories</a></li>
                 <li><a href="{{ url_for('logout') }}">Exit Lounge</a></li>
             {% else %}
