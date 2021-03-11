@@ -11,10 +11,21 @@
     {% endfor %}
 
 <ul class="collapsible popout">
+    {% for drink in drinks %}
     <li>
-        <div class="collapsible-header green-text"><i class="fas fa-cocktail"></i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header green-text">
+            <i class="fas fa-cocktail"></i>
+            <strong>{{ drink.drink_name }}</strong>
+        </div>
+        <div class="collapsible-body">
+            <img src="{{ drink.drink_image }}" alt="">
+            <p>Style - {{ drink.category_name }}</p>
+           <p>Method - {{ drink.drink_method }}</p>
+           <p>Garnish - {{ drink.drink_garnish }}</p>
+           <p>Created by - {{ drink.social_media }}</p>
+        </div>
     </li>
+    {% endfor %}
 </ul>
 
 {% endblock %}
