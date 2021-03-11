@@ -21,12 +21,15 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
-                    <li><a href="#">New Drink</a></li>
-                    <li><a href="#">Manage Categories</a></li>
-                    <li><a href="#">Leave Lounge</a></li>
-                    <li><a href="{{ url_for('login') }}">Enter Lounge</a></li>
-                    <li><a href="{{ url_for('join') }}">Join Lounge</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
+                        <li><a href="#">New Drink</a></li>
+                        <li><a href="#">Manage Categories</a></li>
+                        <li><a href="{{ url_for('logout') }}">Leave Lounge</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Enter Lounge</a></li>
+                        <li><a href="{{ url_for('join') }}">Join Lounge</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -34,12 +37,15 @@
         <ul class="sidenav amber lighten-1 " id="mobile-demo">
             <li><h4 class="center-align green-text text-darken-2">The Síbín Lounge</h4></li><br>
             <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
-            <li><a href="#">New Drink</a></li>
-            <li><a href="#">Manage Categories</a></li>
-            <li><a href="#">Leave Lounge</a></li>
-            <li><a href="{{ url_for('login') }}">Enter Lounge</a></li>
-            <li><a href="{{ url_for('join') }}">Join Lounge</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
+                <li><a href="#">New Drink</a></li>
+                <li><a href="#">Manage Categories</a></li>
+                <li><a href="{{ url_for('logout') }}">Exit Lounge</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Enter Lounge</a></li>
+                <li><a href="{{ url_for('join') }}">Join Lounge</a></li>
+            {% endif %}
         </ul>
     </header>
 
