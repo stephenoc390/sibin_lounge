@@ -4,7 +4,8 @@
     <h3 class="green-text text-darken-4 center-align">Add Drink</h3>
 
     <div class="row card-panel amber lighten-3">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_drink') }}">
+            <!-- drink name input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cocktail prefix"></i>
@@ -13,6 +14,7 @@
                     <label for="drink_name">Drink Name</label>
                 </div>
             </div>
+            <!-- category selection -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-caret-square-down prefix"></i>
@@ -25,6 +27,7 @@
                     <label for="category_name" >Style</label>
                 </div>
             </div>
+            <!-- drink ingredients input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-stream prefix"></i>
@@ -33,6 +36,7 @@
                     <label for="drink_ingredients">Ingredients</label>
                 </div>
             </div>
+            <!-- drink method input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ol prefix"></i>
@@ -41,6 +45,7 @@
                     <label for="drink_method">Method</label>
                 </div>
             </div>
+            <!-- drink garnish input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-umbrella-beach prefix"></i>
@@ -49,12 +54,21 @@
                     <label for="drink_garnish">Garnish</label>
                 </div>
             </div>
+            <!-- social media input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-external-link-square-alt prefix"></i>
                     <input id="social_media" name="social_media" minlength="5" maxlength="40"
                         type="text" class="validate">
                     <label for="social_media">Social Media Link</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Add Drink <i class="fas fa-plus-square right"></i>
+                    </button>
                 </div>
             </div>
         </form>

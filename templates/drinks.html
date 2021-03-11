@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3 class="green-text text-darken-4 center-align">Drinks of the Lounge</h3>
+
     <ul class="collapsible popout">
         {% for drink in drinks %}
         <li>
@@ -15,6 +17,7 @@
                 <p>Ingredients - {{ drink.drink_ingredients }}</p>
                 <p>Garnish - {{ drink.drink_garnish }}</p>
                 <p>Created by - {{ drink.social_media }}</p>
+                <p>Submitted by - {{ drink.made_by }}</p>
             </div>
         </li>
         {% endfor %}

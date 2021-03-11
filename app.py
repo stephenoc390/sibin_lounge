@@ -93,14 +93,27 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have left the Lounge")
     session.pop("user")
     return redirect(url_for("login"))
 
 
-@app.route("/add_drink")
+@app.route("/add_drink", methods=["GET", "POST"])
 def add_drink():
+    if request.method == "POST":
+        drink = {
+            "category_name": request.form.get("category_name"),
+            "drink_name": request.form.get("drink_name"),
+            "drink_ingredients": request.form.getlist("drink_ingredients"),
+            "drink_method": request.form.get("drink_method"),
+            "drink_garnish": request.form.get("drink_garnish"),
+            "social_media": request.form.get("social_media"),
+            "made_by": session["user"]
+        }
+        mongo.db.drinks.insert_one(drink)
+        flash("Drink has been added to the Lounge")
+        return redirect(url_for("get_drinks"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_drink.html", categories=categories)
 
