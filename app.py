@@ -139,6 +139,13 @@ def edit_drink(drink_id):
     return render_template("edit_drink.html", drink=drink, categories=categories)
 
 
+@app.route("/delete_drink/<drink_id>")
+def delete_drink(drink_id):
+    mongo.db.drinks.remove({"_id": ObjectId(drink_id)})
+    flash("Drink has been removed")
+    return redirect(url_for("get_drinks"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
