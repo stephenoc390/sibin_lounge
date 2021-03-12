@@ -154,6 +154,14 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    if request.method == "POST":
+        category = {
+            "catgory_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Style Added")
+        return redirect(url_for("get_categories"))
+
     return render_template("add_category.html")
 
 
