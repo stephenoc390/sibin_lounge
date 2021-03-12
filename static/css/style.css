@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Caveat&family=Oswald&display=swap');
+
 body {
     background-color: #ECDEC1;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: "Oswald", sans-serif;
 }
 
 main {
