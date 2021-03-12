@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Caveat&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat&family=Gloria+Hallelujah&family=Oswald&family=Rock+Salt&family=Special+Elite&family=Spectral&family=Spectral+SC&display=swap');
 
 body {
     background-color: #ECDEC1;
@@ -27,4 +27,35 @@ main {
 .collapsible-header .col strong {
     margin: 5px;
     line-height: 42px;
+}
+
+.hero {
+    background-image: url(/static/images/hero_image.jpg);
+    height: 50vh;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero_text_big {
+    font-family: "Oswald", sans-serif;
+    font-size: 120px;
+    color: #388e3c;
+    width: 100%;
+    top: 10%;
+    z-index: 1;
+    text-align: center;
+    -webkit-text-stroke: 3px black;
+}
+
+.brand-logo {
+    margin-left: 10px;
 }
