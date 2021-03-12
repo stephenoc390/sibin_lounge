@@ -25,6 +25,13 @@ def get_drinks():
     return render_template("drinks.html", drinks=drinks)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    drinks = list(mongo.db.drinks.find({"$text": {"$search": query}}))
+    return render_template("drinks.html", drinks=drinks)
+
+
 @app.route("/join", methods=["GET", "POST"])
 def join():
     if request.method == "POST":
