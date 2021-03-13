@@ -231,8 +231,9 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ### Code
 
--   Coding ideas came from:
+-   Code and Coding ideas came from:
     - The [Code Institute](https://codeinstitute.net/) training videos and projects
+    - Materialize
 
 ### Media
 
