@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Sibin Lounge</title>
+    <title>Síbín Lounge</title>
 </head>
 <body>
 
@@ -37,7 +37,7 @@
         </nav>
         <!-- side navbar -->
         <ul class="sidenav amber lighten-1 " id="mobile-demo">
-            <li><h4 class="center-align green-text text-darken-2">Síbín Lounge</h4></li><br>
+            <li><h4 class="center-align green-text text-darken-2">Síbín Lounge</h4></li>
             <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
@@ -67,7 +67,6 @@
     </section>
 
     <div class="hero">
-        
         <p class="hero_text_big">Síbín Lounge <i class="fas fa-cocktail"></i></p>
     </div>
 
