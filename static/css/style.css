@@ -39,7 +39,6 @@ main {
     background-size: cover;
     display: flex;
     position: relative;
-    
     align-items: center;
     justify-content: center;
     position: relative;
@@ -58,4 +57,8 @@ main {
 
 .brand-logo {
     margin-left: 10px;
+}
+
+.drink_name {
+    font-family: "Oswald";
 }
