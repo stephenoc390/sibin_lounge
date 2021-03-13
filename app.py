@@ -112,7 +112,7 @@ def add_drink():
         drink = {
             "category_name": request.form.get("category_name"),
             "drink_name": request.form.get("drink_name"),
-            "drink_ingredients": request.form.getlist("drink_ingredients"),
+            "drink_ingredients": request.form.get("drink_ingredients"),
             "drink_method": request.form.get("drink_method"),
             "drink_garnish": request.form.get("drink_garnish"),
             "social_media": request.form.get("social_media"),
@@ -163,7 +163,7 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "catgory_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name")
         }
         mongo.db.categories.insert_one(category)
         flash("New Style Added")

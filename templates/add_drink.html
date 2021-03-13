@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cocktail prefix"></i>
-                    <input id="drink_name" name="drink_name" minlength="4" maxlength="15"
+                    <input id="drink_name" name="drink_name" minlength="4" maxlength="30"
                         type="text" class="validate" required>
                     <label for="drink_name">Drink Name</label>
                 </div>
@@ -24,7 +24,7 @@
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
-                    <label for="category_name" >Style</label>
+                    <label for="category_name">Style</label>
                 </div>
             </div>
             <!-- drink ingredients input -->
@@ -33,7 +33,7 @@
                     <i class="fas fa-stream prefix"></i>
                     <textarea id="drink_ingredients" name="drink_ingredients" minlength="5"
                         maxlength="300" class="materialize-textarea validate" required></textarea>
-                    <label for="drink_ingredients">Ingredients</label>
+                    <label for="drink_ingredients">Ingredients(separated with , )</label>
                 </div>
             </div>
             <!-- drink method input -->
@@ -42,7 +42,7 @@
                     <i class="fas fa-list-ol prefix"></i>
                     <textarea id="drink_method" name="drink_method" minlength="5"
                         maxlength="300" class="materialize-textarea validate" required></textarea>
-                    <label for="drink_method">Method</label>
+                    <label for="drink_method">Method(separated with , )</label>
                 </div>
             </div>
             <!-- drink garnish input -->
@@ -54,19 +54,10 @@
                     <label for="drink_garnish">Garnish</label>
                 </div>
             </div>
-            <!-- social media input -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-external-link-square-alt prefix"></i>
-                    <input id="social_media" name="social_media" minlength="5" maxlength="40"
-                        type="text" class="validate">
-                    <label for="social_media">Social Media Link</label>
-                </div>
-            </div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light" type="submit">
+                    <button class="btn waves-effect waves-light light-green darken-1" type="submit">
                         Add Drink <i class="fas fa-plus-square right"></i>
                     </button>
                 </div>
