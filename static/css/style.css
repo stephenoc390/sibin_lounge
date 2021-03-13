@@ -46,7 +46,7 @@ main {
 
 .hero_text_big {
     font-family: "Oswald", sans-serif;
-    font-size: 60px;
+    font-size: 30px;
     color: #388e3c;
     width: 100%;
     top: 10%;
@@ -61,6 +61,7 @@ main {
     top: 14%;
   }
 }
+
 
 .brand-logo {
     margin-left: 10px;
