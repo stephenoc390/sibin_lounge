@@ -67,7 +67,7 @@ main {
 }
 
 .drink_name {
-    font-family: "Oswald";
+    font-family: "Oswald", sans-serif;
 }
 
 h3 {

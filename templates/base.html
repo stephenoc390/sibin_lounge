@@ -36,7 +36,7 @@
         </nav>
         <!-- side navbar -->
         <ul class="sidenav green lighten-4 " id="mobile-demo">
-            <li><h4 class="center-align green-text text-darken-2">Síbín Lounge</h4></li><br>
+            <li><h4 class="center-align green-text text-darken-2">Síbín Lounge</h4></li>
             <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
