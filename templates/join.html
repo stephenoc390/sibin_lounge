@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Join the Lounge</h3><br>
-    <h5 class="center-align">A place for the bartenders of Ireland to showcase their specialties</h5><br>
+    <h3 class="center-align white-text">Join the Lounge</h3><br>
+    <h4 class="center-align white-text">Welcome to Síbín Lounge a place for you to find and share the best drinks you've made at home in your own little Síbín</h5><br>
+    <h6 class="center-align white-text">The word Síbín(pronounced "Shebeen") originated in Ireland between 1780–90. It referred to home brewed whiskey which was then sold illegally and soon came to refer to unlicensed premises that sold alcohol.</h5><br>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('join') }}">
@@ -37,7 +38,7 @@
 
     <div class="row">
         <div class="col s12">
-            <p class="center-align">
+            <p class="center-align white-text">
                 Already Joined?
                 <a href="{{ url_for('login') }}" class="light-green-text text-darken-3">Enter The Lounge Here!</a>
             </p>

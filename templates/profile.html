@@ -3,11 +3,19 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2 green lighten-3">
-            <div class="card-panel green lighten-3">
-                <h3 class="center-align white-text text-darken-3">
+                <h3 class="center-align black-text text-darken-3">
                     {{ username }}'s Profile
                 </h3>
-            </div>
+                <ul class="center-align">
+                    <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
+                        {% if session.user|lower == "admin"|lower %}
+                            <li><a href="{{ url_for('get_categories') }}">Manage Styles</a></li>
+                        {% endif %}
+                        <li><a href="{{ url_for('logout') }}">Exit Lounge</a></li>
+                    {% endif %}
+                </ul>
         </div>
     </div>
 
