@@ -22,7 +22,6 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
                         <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
                         {% if session.user|lower == "admin"|lower %}
                             <li><a href="{{ url_for('get_categories') }}">Manage Styles</a></li>
@@ -40,7 +39,6 @@
             <li><h4 class="center-align green-text text-darken-2">Síbín Lounge</h4></li><br>
             <li><a href="{{ url_for('get_drinks') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Your Drinks</a></li>
                 <li><a href="{{ url_for('add_drink') }}">New Drink</a></li>
                 {% if session.user|lower == "admin"|lower %}
                     <li><a href="{{ url_for('get_categories') }}">Manage Styles</a></li>
